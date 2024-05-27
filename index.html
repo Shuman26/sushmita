@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushmita Khadka Blog</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: linear-gradient(to bottom right, #FFA07A, #87CEEB);
+        }
+
+        header {
+            background-color: rgba(255, 192, 203, 0.8);
+            color: #333;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4169E1;
+        }
+
+        footer {
+            background-color: rgba(255, 192, 203, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Page-specific Styles */
+        .page {
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#address" onclick="showPage('address')">Address</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home" class="page">
+            <div class="content">
+                <h1 style="color: #FF69B4;">Welcome to Sushmita Khadka's Blog</h1>
+                <div class="bio">
+                    <p>Hello! My name is Sushmita Khadka. I am originally from Nepal and currently studying in Denmark since sep, 2022. I am pursuing a Bachelor's degree in Business. This blog is a space where I share my experiences, thoughts, and insights about my studies, life in Denmark, and various topics related to business and personal growth. I hope you find the content informative and engaging. Feel free to reach out to me through the <a href="#contact" onclick="showPage('contact')" style="color: #FF69B4;">contact page</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="page" style="display: none;">
+            <div class="content">
+                <h1 style="color: #FF69B4;">Contact Sushmita Khadka</h1>
+                <div class="contact-info">
+                    <p>If you would like to get in touch with me, you can reach me at:</p>
+                    <p>Email: <a href="mailto:sush0150@niels.brock.dk" style="color: #FF69B4;">sush0150@niels.brock.dk</a></p>
+                    <p>Follow me on social media:</p>
+                    <ul>
+                        <li><a href="#" style="color: #FF69B4;">Facebook</a></li>
+                        <li><a href="#" style="color: #FF69B4;">Twitter</a></li>
+                        <li><a href="#" style="color: #FF69B4;">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h2>Send me a message</h2>
+                    <form id="contactForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit" style="background-color: #FF69B4; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="address" class="page" style="display: none;">
+            <div class="content">
+                <h1 style="color: #FF69B4;">Our Address</h1>
+                <div class="address-info">
+                    <p>You can visit us at:</p>
+                    <p>123 Business Street,</p>
+                    <p>Copenhagen, Denmark</p>
+                    <p>We are open from Monday to Friday, 9 AM to 5 PM. Feel free to drop by during our office hours to discuss anything related to business studies or if you just want to say hello. We look forward to meeting you!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sushmita Khadka</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.style.display = 'none';
+            });
+
+            // Show the selected page
+            var selectedPage = document.getElementById(pageId);
+            selectedPage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
